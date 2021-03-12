@@ -7,8 +7,18 @@ async function run() {
         tl.setResourcePath(path.join(__dirname, 'task.json'));
 
         const failOnStderr: boolean = tl.getBoolInput('failOnStderr', false);
-        const workingDirectory: string = tl.getInput('workingDirectory', false);
-        const additionalParameters: string = tl.getInput('additionalParameters', false)
+        
+        const workingDirectory: string = tl.getInput('workingDirectory', false) ?? 'bad';
+        if (workingDirectory == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
+        
+        const additionalParameters: string = tl.getInput('additionalParameters', false) ?? 'bad';
+        if (additionalParameters == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
 
         if(workingDirectory != ''){
             shell.cd(workingDirectory);
