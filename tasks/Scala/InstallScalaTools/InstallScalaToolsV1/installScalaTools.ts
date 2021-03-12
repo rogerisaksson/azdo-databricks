@@ -59,7 +59,7 @@ async function run() {
         tl.assertAgent('2.115.0');
         let tempDirectory = tl.getVariable('agent.tempDirectory') ?? 'bad';
         if (tempDirectory == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad temporary directory was given');
             return;
         }
         
