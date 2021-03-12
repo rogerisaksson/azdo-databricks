@@ -57,7 +57,12 @@ async function run() {
 
         // Write the script to disk.
         tl.assertAgent('2.115.0');
-        let tempDirectory = tl.getVariable('agent.tempDirectory');
+        let tempDirectory = tl.getVariable('agent.tempDirectory') ?? 'bad';
+        if (tempDirectory == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
+        
         tl.checkPath(tempDirectory, `${tempDirectory} (agent.tempDirectory)`);
 
         let fileName = uuidV4() + '.sh';
