@@ -24,7 +24,7 @@ async function run() {
 
         const clusterid: string = tl.getInput('clusterid', true) ?? 'bad';
         if (clusterid == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad cluster id was given');
             return;
         }
         
