@@ -11,13 +11,13 @@ async function run() {
     try {
         const url: string = tl.getInput('url', true) ?? 'bad';
         if (url == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad url was given');
             return;
         }
         
         const token: string = tl.getInput('token', true) ?? 'bad';
         if (token == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad token was given');
             return;
         }
 
