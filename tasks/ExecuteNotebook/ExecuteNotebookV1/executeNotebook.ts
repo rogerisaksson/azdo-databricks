@@ -7,9 +7,23 @@ async function run() {
     tl.setResourcePath(path.join(__dirname, 'task.json'));
 
     try {
-        const notebookPath: string = tl.getInput('notebookPath', true);
-        const executionParams: string = tl.getInput('executionParams', false);
-        const existingClusterId: string = tl.getInput('existingClusterId', false);
+        const notebookPath: string = tl.getInput('notebookPath', true) ?? 'bad';
+        if (notebookPath == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
+        
+        const executionParams: string = tl.getInput('executionParams', false) ?? 'bad';
+        if (executionParams == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
+        
+        const existingClusterId: string = tl.getInput('existingClusterId', false) ?? 'bad';
+        if (existingClusterId == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
 
         let notebook = new Notebook(notebookPath, executionParams);
 
