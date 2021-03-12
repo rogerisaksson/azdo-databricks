@@ -8,13 +8,13 @@ function uninstallLibsFromCluster() {
              
         const libraryfilename: string = tl.getInput('libraryfilename', true) ?? 'bad';
         if (libraryfilename == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad library file name was given');
             return;
         }
         
         const clusterid: string = tl.getInput('clusterid', true) ?? 'bad';
         if (clusterid == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad cluster id was given');
             return;
         }
 
