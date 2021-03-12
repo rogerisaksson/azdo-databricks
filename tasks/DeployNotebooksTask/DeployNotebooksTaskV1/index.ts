@@ -8,11 +8,15 @@ async function run() {
         if (notebooksFolderPath == 'bad') {
             tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
             return;
+        }
+        console.log('notebooksFolderPath', notebooksFolderPath);
         
         const workspaceFolder: string | undefined = tl.getInput('workspaceFolder', true) ;
         if (workspaceFolder == 'bad') {
             tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
             return;
+        }
+        console.log('workspaceFolder', workspaceFolder);
 
         if (!isDirSync(notebooksFolderPath)){
             tl.setResult(tl.TaskResult.Failed, 'The specified path for Notebooks folder is a file.')
