@@ -10,13 +10,13 @@ async function run() {
         
         const workingDirectory: string = tl.getInput('workingDirectory', false) ?? 'bad';
         if (workingDirectory == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad working directory was given');
             return;
         }
         
         const additionalParameters: string = tl.getInput('additionalParameters', false) ?? 'bad';
         if (additionalParameters == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad additional parameters was given');
             return;
         }
 
