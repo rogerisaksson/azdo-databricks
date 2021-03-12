@@ -3,7 +3,7 @@
     "id": "azdo-databricks",
     "name": "DevOps for Azure Databricks",
     "version": "0.1.17",
-    "publisher": "riserrad",
+    "publisher": "NanoEcho",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
