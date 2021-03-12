@@ -4,8 +4,12 @@ import { fstat } from 'fs';
 
 async function run() {
     try {
-        const notebooksFolderPath: string = tl.getInput('notebooksFolderPath', true)!;
-        const workspaceFolder: string = tl.getInput('workspaceFolder', true)!;
+        
+        let a = x != null ? tl.getInput('notebooksFolderPath', true) : "";
+        let b = x != null ? tl.getInput('workspaceFolder', true) : "";
+        
+        const notebooksFolderPath: string = a;
+        const workspaceFolder: string = b;
 
         if (!isDirSync(notebooksFolderPath)){
             tl.setResult(tl.TaskResult.Failed, 'The specified path for Notebooks folder is a file.')
