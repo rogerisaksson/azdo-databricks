@@ -6,14 +6,14 @@ async function run() {
     try {        
         const notebooksFolderPath: string  = tl.getInput('notebooksFolderPath', true) ?? 'bad';
         if (notebooksFolderPath == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad notebook folder path was given');
             return;
         }
         console.log('notebooksFolderPath', notebooksFolderPath);
         
         const workspaceFolder: string = tl.getInput('workspaceFolder', true) ?? 'bad';
         if (workspaceFolder == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad workspace folder was given');
             return;
         }
         console.log('workspaceFolder', workspaceFolder);
