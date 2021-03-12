@@ -4,14 +4,14 @@ import { fstat } from 'fs';
 
 async function run() {
     try {        
-        const notebooksFolderPath: string | undefined = tl.getInput('notebooksFolderPath', true);
+        const notebooksFolderPath: string  = tl.getInput('notebooksFolderPath', true);
         if (notebooksFolderPath == 'bad') {
             tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
             return;
         }
         console.log('notebooksFolderPath', notebooksFolderPath);
         
-        const workspaceFolder: string | undefined = tl.getInput('workspaceFolder', true) ;
+        const workspaceFolder: string = tl.getInput('workspaceFolder', true) ;
         if (workspaceFolder == 'bad') {
             tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
             return;
