@@ -5,11 +5,10 @@ import { fstat } from 'fs';
 async function run() {
     try {
         
-        let a = x != null ? tl.getInput('notebooksFolderPath', true) : "";
-        let b = x != null ? tl.getInput('workspaceFolder', true) : "";
+        declare function f(x: number): string;
         
-        const notebooksFolderPath: string = a;
-        const workspaceFolder: string = b;
+        const notebooksFolderPath: string | undefined = tl.getInput('notebooksFolderPath', true);
+        const workspaceFolder: string | undefined = tl.getInput('workspaceFolder', true) ;
 
         if (!isDirSync(notebooksFolderPath)){
             tl.setResult(tl.TaskResult.Failed, 'The specified path for Notebooks folder is a file.')
