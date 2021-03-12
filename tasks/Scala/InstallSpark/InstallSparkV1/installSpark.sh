@@ -16,7 +16,7 @@
 setupSpark() {
 
    SPARKURL=https://ftpmirror1.infania.net/mirror/apache/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz
-   sudo wget "$SPARKURL"
+   wget "$SPARKURL"
    tar xzvf spark-2.4.7-bin-hadoop2.7.tgz
    PATH=$PATH:/home/vsts/spark-2.4.7-bin-hadoop2.7/bin
    echo "Path = "$PATH
