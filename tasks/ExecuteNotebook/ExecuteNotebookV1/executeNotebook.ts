@@ -9,19 +9,19 @@ async function run() {
     try {
         const notebookPath: string = tl.getInput('notebookPath', true) ?? 'bad';
         if (notebookPath == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad notebook path was given');
             return;
         }
         
         const executionParams: string = tl.getInput('executionParams', false) ?? 'bad';
         if (executionParams == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad execution params was given');
             return;
         }
         
         const existingClusterId: string = tl.getInput('existingClusterId', false) ?? 'bad';
         if (existingClusterId == 'bad') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            tl.setResult(tl.TaskResult.Failed, 'Bad existing cluster id was given');
             return;
         }
 
