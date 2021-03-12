@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microsoft/azdo-databricks.git"
+    "url": "git+https://github.com/microsoft/rogerisaksson/azdo-databricks.git"
   },
   "keywords": [
     "azdo",

@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microsoft/azdo-databricks.git"
+    "url": "git+https://github.com/microsoft/rogerisaksson/azdo-databricks.git"
   },
   "keywords": [
     "azure",
@@ -19,9 +19,9 @@
   "author": "Microsoft DevLabs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/microsoft/azdo-databricks/issues"
+    "url": "https://github.com/microsoft/rogerisaksson/azdo-databricks/issues"
   },
-  "homepage": "https://github.com/microsoft/azdo-databricks#readme",
+  "homepage": "https://github.com/microsoft/rogerisaksson/azdo-databricks#readme",
   "dependencies": {
     "azure-pipelines-task-lib": "^2.8.0"
   },

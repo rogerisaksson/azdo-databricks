@@ -1,5 +1,5 @@
 {
-  "name": "azdo-databricks",
+  "name": "azdo-databricks-NanoEcho",
   "version": "0.1.0",
   "description": "A set of Pipeline tasks to help add DevOps practices to a Databricks development cycle.",
   "dependencies": {
