@@ -22,7 +22,12 @@ async function run() {
     try{
         tl.setResourcePath(path.join(__dirname, 'task.json'));
 
-        const clusterid: string = tl.getInput('clusterid', true);
+        const clusterid: string = tl.getInput('clusterid', true) ?? 'bad';
+        if (clusterid == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
+        
         const failOnStderr: boolean = tl.getBoolInput('failOnStderr', false);
 
         if(!shell.which('databricks')){
