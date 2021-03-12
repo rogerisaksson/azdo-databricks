@@ -5,8 +5,18 @@ import shell = require('shelljs');
 function uninstallLibsFromCluster() {
     try {
         const failOnStderr: boolean = tl.getBoolInput('failOnStderr', false);
-        const libraryfilename: string = tl.getInput('libraryfilename', true);
-        const clusterid: string = tl.getInput('clusterid', true);
+             
+        const libraryfilename: string = tl.getInput('libraryfilename', true) ?? 'bad';
+        if (libraryfilename == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
+        
+        const clusterid: string = tl.getInput('clusterid', true) ?? 'bad';
+        if (clusterid == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        }
 
         let fileName = 'uninstallcodefromcluster.sh'
         let filePath = path.join(__dirname, fileName);
