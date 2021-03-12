@@ -6,13 +6,21 @@ async function run() {
     try {
         tl.setResourcePath(path.join(__dirname, 'task.json'));
 
-        const workingDirectory: string = tl.getInput('workingDirectory', false);
+        const workingDirectory: string = tl.getInput('workingDirectory', false) ?? 'bad';
+        if (workingDirectory == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad working directory was given');
+            return;
+        }
 
         if(workingDirectory != ''){
             tl.cd(workingDirectory);
         }
 
-        const clusterid: string = tl.getInput('clusterid', true);
+        const clusterid: string = tl.getInput('clusterid', true) ?? 'bad';
+        if (clusterid == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad cluster id input was given');
+            return;
+        }
         
         let bashPath: string = tl.which('bash', true);
         let fileName = 'waitforclusterreboot.sh'
