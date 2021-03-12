@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "azdo-databricks-NanoEcho",
     "name": "DevOps for Azure Databricks",
-    "version": "0.1.21",
+    "version": "0.1.22",
     "publisher": "NanoEcho",
     "targets": [
         {
