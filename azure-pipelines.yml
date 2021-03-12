@@ -30,6 +30,7 @@ steps:
     displayName: "Install root NPM dependencies"
 
   - script: |
+      npm install azure-pipelines-task-lib --save
       npm run package
     displayName: "Build and package"
 
