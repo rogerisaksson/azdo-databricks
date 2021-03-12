@@ -13,11 +13,13 @@ async function run() {
         if (url == 'bad') {
             tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
             return;
+        }
         
         const token: string = tl.getInput('token', true) ?? 'bad';
-         if (token == 'bad') {
+        if (token == 'bad') {
             tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
             return;
+        }
 
         installDatabricksCli();
         
