@@ -3,12 +3,16 @@ import fs = require('fs');
 import { fstat } from 'fs';
 
 async function run() {
-    try {
-        
-        declare function f(x: number): string;
-        
+    try {        
         const notebooksFolderPath: string | undefined = tl.getInput('notebooksFolderPath', true);
+        if (notebooksFolderPath == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
+        
         const workspaceFolder: string | undefined = tl.getInput('workspaceFolder', true) ;
+        if (workspaceFolder == 'bad') {
+            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
+            return;
 
         if (!isDirSync(notebooksFolderPath)){
             tl.setResult(tl.TaskResult.Failed, 'The specified path for Notebooks folder is a file.')
