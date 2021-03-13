@@ -15,10 +15,10 @@
 #===================================================================================
 setupSpark() {
 
-   SPARKURL=https://ftpmirror1.infania.net/mirror/apache/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz
+   SPARKURL=https://ftpmirror1.infania.net/mirror/apache/spark/spark-3.1.1/spark-3.1.1-bin-hadoop2.7.tgz
    wget "$SPARKURL"
-   tar xzvf spark-2.4.7-bin-hadoop2.7.tgz
-   PATH=$PATH:/home/vsts/spark-2.4.7-bin-hadoop2.7/bin
+   tar xzvf spark-3.1.1-bin-hadoop2.7.tgz
+   PATH=$PATH:/home/vsts/spark-3.1.1-bin-hadoop2.7/bin
    echo "Path = "$PATH
 }
 setupSpark
